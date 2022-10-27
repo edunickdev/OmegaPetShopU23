@@ -1,6 +1,6 @@
 const clienteOperaciones = require("../operaciones/clienteOperaciones");
 const router = require("express").Router(); 
 
-router.get("/",clienteOperaciones.buscarClientes);
+router.get("/", clienteOperaciones.buscarClientes);
 
-module.exports = router
+module.exports = router;

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const clienteSchema = mongoose.Schema({
     nombres: { type: String, maxLength: 50, required: true, unique: false},
@@ -8,4 +8,4 @@ const clienteSchema = mongoose.Schema({
     correo: {type: Number, maxLength: 80, required: true, unique: true}
 })
 
-module.exports = mongoose.model("clientes", clienteSchema);
+module.exports = mongoose.model("Cliente", clienteSchema);
