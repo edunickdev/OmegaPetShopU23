@@ -1,3 +1,6 @@
+import imagenes from "../imgs/imagenes";
+
+
 const Carousel = () => {
     return (
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -8,13 +11,13 @@ const Carousel = () => {
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./imgs/w1.jpg" class="d-block w-75" alt="..." />
+                    <img src={imagenes.img1} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/w2.jpg" class="d-block w-75" alt="..." />
+                    <img src={imagenes.img2} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/w3.jpg" class="d-block w-75" alt="..." />
+                    <img src={imagenes.img3} class="d-block w-100" />
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">

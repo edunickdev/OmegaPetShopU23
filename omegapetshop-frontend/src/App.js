@@ -3,8 +3,10 @@ import Header from "./general/Header";
 
 const App = () => {
   return (
-    <Header />,
-    <Carousel />
+    <div>
+      <Header />
+      <Carousel />
+    </div>
   );
 }
 
