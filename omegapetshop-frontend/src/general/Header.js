@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <div className=" navbar col-md-12 bg-warning fixed-top" style={{backgroundColor:"lightcoral"}}>
+        <div className=" navbar col-md-12 bg-warning fixed-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-warning col-12">
           <a className="navbar-brand" href="/">OmegaPetShop</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,8 @@ const Header = () => {
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2 bg-light" type="search" placeholder="Search" />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <input className="form-control mr-sm-2 bg-light" type="search" placeholder="Buscar" />
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
           </div>
         </nav>
