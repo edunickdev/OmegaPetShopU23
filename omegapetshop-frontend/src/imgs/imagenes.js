@@ -19,4 +19,4 @@ export default {
     "img7": iconWP,
     "img8": iconFB,
     "img9": iconIG
-}
+};
