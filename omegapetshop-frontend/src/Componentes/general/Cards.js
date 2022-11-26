@@ -2,6 +2,10 @@ import imagenes from "../../imgs/imagenes";
 
 const Cards = () => {
     return (
+        <div className="container">
+        <div className="row">
+            <h1 className="text-center mx-auto mt-4">NUESTROS PRODUCTOS</h1>
+        </div>
         <div className="card-group">
             <div className="card m-5 shadow">
                 <img src={imagenes.img4} className="card-img-top" alt="..." />
@@ -27,6 +31,7 @@ const Cards = () => {
                         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                     </div>
             </div>
+        </div>
         </div>
     );
 }
