@@ -1,4 +1,4 @@
-import imagenes from "../imgs/imagenes";
+import imagenes from "../../imgs/imagenes";
 
 
 const Carousel = () => {
