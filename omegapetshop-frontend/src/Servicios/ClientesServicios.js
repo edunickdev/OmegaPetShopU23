@@ -27,9 +27,8 @@ const ClientesServicios = {};
 ClientesServicios.listarClientes = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() =>{
-			reject("uy no, se rompio");
+			resolve(clientes);
 		}, 2000);
 	})
 }
-
 export default ClientesServicios;
