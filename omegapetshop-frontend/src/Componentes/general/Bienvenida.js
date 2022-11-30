@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const bienvenida = () => {
+const Bienvenida = () => {
 	const [ valor, setValor] = useState(0);
 
 	const sumar = () => {
@@ -16,4 +16,4 @@ const bienvenida = () => {
 	)
 }
 
-export default bienvenida;
+export default Bienvenida;

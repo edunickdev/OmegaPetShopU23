@@ -1,33 +1,63 @@
 import ClientesServicios from "../../Servicios/ClientesServicios";
 import estados from "../../enumeradores/estados";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const FormClients = () => {
     
     const [ listadoClientes, setListadoClientes ] = useState([]);
     const [ estado, setEstado ] = useState(estados.CARGANDO);
-    
+    const [criterio, setCriterio ] = useState("");
+
     const cargarClientes = async () => {
-            try {
-                const respuesta = await ClientesServicios.listarClientes();
-                console.log(respuesta);
-                if (respuesta.length > 0){
-                    setListadoClientes(respuesta);
-                    setEstado(estados.OK);
-                }
-                else{
-                    setEstado(estados.VACIO);
-                }
+        try {
+            const respuesta = await ClientesServicios.listarClientes();
+            console.log(respuesta.data);
+            if (respuesta.data.length > 0){
+                setListadoClientes(respuesta.data);
+                setEstado(estados.OK);
             }
-            catch (error) {
-                setEstado(estados.ERROR);
+            else{
+                setEstado(estados.VACIO);
             }
         }
-    cargarClientes();
-    
+        catch (error) {
+            setEstado(estados.ERROR);
+        }
+    }
+
+    const buscarClientes = async (event) => {
+        event.preventDefault();
+        try {
+            const respuesta = await ClientesServicios.buscarCliente(criterio);
+            console.log(respuesta.data);
+            if (respuesta.data.length > 0){
+                setListadoClientes(respuesta.data);
+                setEstado(estados.OK);
+            }
+            else{
+                setEstado(estados.VACIO);
+            }
+        }
+        catch (error) {
+            setEstado(estados.ERROR);
+        }
+    }
+
+    useEffect(() => {
+        cargarClientes();
+    }, [])
+
+    const cambiarCriterio = (event) => {
+        setCriterio(event.target.value);
+    }
+
     return (
         <div className="container">
             <h3 className="mt-3">LISTA DE CLIENTES</h3>
+            <form action="">
+                <input type="text"  value={criterio} onChange={cambiarCriterio} id="criterio" name="criterio"/>
+                <button className="btn btn-secondary" onClick={buscarClientes} id="buscar" name="buscar" >Buscar</button>
+            </form>
             <table className="table table-sm">
                 <thead>
                 <tr>
