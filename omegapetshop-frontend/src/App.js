@@ -17,7 +17,7 @@ const App = () => {
         <Carousel />
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<bienvenida />} exact></Route>
+            <Route path="/" element={<Bienvenida />} exact></Route>
             <Route path="/products" element={<Cards />} exact></Route>
             <Route path="/admin" element={<FormAdmin/>} exact></Route>
             <Route path="/client" element={<FormClients/>} exact></Route>
