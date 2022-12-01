@@ -13,6 +13,11 @@ const FormAdmin = () => {
     const [ contrasena, setPassword ] = useState("");
     const [ contrasenaB, setPasswordB ] = useState("");
     const [ mensajeError, setMensajeError ] = useState("");
+    const [ dni, setDni ] = useState("");
+
+    const DNI = (event) => {
+        setDni(event.target.value);
+    }
 
     const password = (event) => {
         setPassword(event.target.value);
@@ -45,12 +50,13 @@ const FormAdmin = () => {
                 const cliente = {
                     nombres: nombres,
                     apellidos: apellidos,
-                    correo: correo,
-                    telefono: telefono
+                    documento: dni,
+                    telefono: telefono,
+                    correo: correo
                 }
                 console.log(cliente);
                 await clientesServicios.guardaCliente(cliente);
-                Navigator("/Clientes");
+                Navigator("/client");
             }
             catch (error) {
                 setMensajeError("Ocurrió un error");
@@ -71,10 +77,13 @@ const FormAdmin = () => {
                 <input type="text" className="form-control col-4 mb-3 text-center mx-1" name="apellidos" onChange={newLName} value={apellidos} id="apellidos" placeholder="Ingrese sus apellidos"/>
             </div>
             <div className="row mx-auto col-8 d-flex justify-content-center">
-                <input type="email" className="form-control col-8 mx-auto mb-3 text-center" name="correo" onChange={newEmail} value={correo} id="correo" placeholder="Digíte su correo electrónico" />
+                <input type="text" className="form-control col-8 mx-auto mb-3 text-center" name="dni" onChange={DNI} value={dni} id="dni" placeholder="Digíte su correo electrónico" />
+            </div>
+            <div className="row mx-auto col-8 d-flex justify-content-center">
+                <input type="email" className="form-control col-8 mx-auto mb-3 text-center" name="correo" onChange={newEmail} value={correo} id="correo" placeholder="Digíte su número de documento" />
             </div>
             <div className="row mx-auto col-8 d-flex justify-content-center mx-1">
-                <input type="number" className="form-control col-8 mb-3 text-center mx-1" name="telefono" onChange={newNPhone} value={telefono} id="telefono" placeholder="Su número de contacto" />
+                <input type="text" className="form-control col-8 mb-3 text-center mx-1" name="telefono" onChange={newNPhone} value={telefono} id="telefono" placeholder="Su número de contacto" />
             </div>
             <div className="row mx-auto col-8 d-flex justify-content-center mx-1">
                 <input type="password" className="form-control col-8 mb-3 text-center mx-1" name="password" onChange={password} value={contrasena} id="password" placeholder="Escriba su password" />

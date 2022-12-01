@@ -91,7 +91,7 @@ const FormClients = () => {
                         estado === estados.VACIO ?
                             (<div>No hay datos</div>)
                         :
-                        ClientesServicios.map((clientes) => (
+                        listadoClientes.map((clientes) => (
                             <tr>
                                 <td>{clientes.nombres + " " + clientes.apellidos}</td>
                                 <td>{clientes.documento}</td>
